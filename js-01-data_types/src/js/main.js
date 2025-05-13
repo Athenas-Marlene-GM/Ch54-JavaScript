@@ -47,6 +47,16 @@ let valor2 = 4;
 console.log("El resultado de " + valor1 + " * " + valor2 + " = " + valor1 * valor2 + " pesos.");
 console.log(`El resultado de ${valor1} * ${valor2} = ${valor1*valor2} pesos.`);
 
+/* 
+ Crear una variable con el nombre de la persona que cumple años.
+ Crear una variable con el regalo que le darás.
+ Mostrar en consola el mensaje que incluya el nombre de las persona y el regalo.
+*/
+
+birthdayPerson= "Jen";
+gift ="no lo sé :( perdón";
+console.log(`El nombre de la persona que cumple años es: ${birthdayPerson} y su regalo es ${gift}`)
+
 /*
  Tipos de datos number.
 
@@ -67,6 +77,14 @@ console.log( typeof +Infinity ); // 'number'
 console.log( typeof ( 3 + "Viernes temático" ) ); // 'string'
 console.log( typeof ( "3Viernes temático" ) ); // 'string'
 console.log( 4 / 0 ); // +Infinity
+
+/* Comprueba si las siguientes variables son del tipo number*/
+const num1 = 42;
+console.log("¿La variable es del tipo number? " + (typeof(num1) === 'number'));
+/* Comprueba si las siguientes variables son del tipo string*/
+const nameCh54 = "Luis";
+console.log("¿La variable es del tipo string? " + (typeof(nameCh54) === 'string'));
+
 
 
 /*
@@ -149,7 +167,7 @@ console.log( typeof myName ); // 'undefined'
    const resultado = "5" + 2 ; // "52" Número convertido a string
    const multiplicacion =  "5" * 3; // 15 El string convertido a number
                      //     5   * 3 = 15
-   const division =  "two" * 6; // NaN
+   const division =  "two" / 6; // NaN
                     // NaN * 6 = NaN
 
 
