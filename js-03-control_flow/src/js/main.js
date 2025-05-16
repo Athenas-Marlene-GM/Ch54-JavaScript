@@ -43,6 +43,70 @@
 */
 
 
+/* 
+ Crear un arrow function que reciba el valor de edad.
+ Si la edad es mayor o igual a 18, la función debe
+ retornar el mensaje "Eres mayor de edad".
+ En caso contrario, retornar el mensaje "Eres menor de edad".
+ - Realizar la versión de if-else sin usar el bloque de código {}
+*/
+
+const esMayorDeEdad = (edad) => { 
+    if( edad >= 18 ) return "Eres mayor de edad"; 
+    else  return "Eres menor de edad";
+}
+
+console.log(esMayorDeEdad(4));
+
+
+/*
+ Crear un arrow function que reciba el valor de edad.
+ Si la edad es mayor o igual a 18 y menor o igual a 30
+                 ( evalur con 18 Y(&&) evaluar con 30        )
+ la función debe retornar el mensaje "Tu luchador es Místico".
+ Si es mayor o igual a 31 el mensaje "Tu luchador es el perro Aguayo".
+ Si es menor a 18 el mensaje "Tu luchador es Penta"
+*/
+
+const esRango = (edad) => {
+    if( edad >= 18  && edad <=30 ) return "Tu luchador es Místico";
+    else if( edad >= 31) return "Tu luchador es el perro Aguayo";
+    else return "Tu luchador es Penta";
+}
+
+{
+    let myVarLet = 30;
+    const myVarConst = 40;
+    var myVarVar = 50;
+    console.log(myVarLet, myVarConst, myVarVar)
+    {
+        let myVarLet = 100;
+        const myVarConst = 110;
+        var myVarVar = 120;
+        console.log(myVarLet, myVarConst, myVarVar)
+    }
+    console.log(myVarLet, myVarConst, myVarVar)
+}
+
+//Ejercicios mentales
+let active = false;
+if (active === true);{
+    console.log("Está activo");
+}
+console.log("Fin del programa");
+
+if( active === true )
+    console.log("Esta activo");
+    console.log("Tiene autorización");
+
+console.log("Fin del programa");
+
+/* active = false;
+if(active); console.log("Está activo");
+else console.log("No está activo");
+console.log("Fin del programa"); */
+
+
 
 
 //--------------- Condicional Switch --------------------------
@@ -72,9 +136,46 @@
   }
 
 */
+const evaluarNombre = ( nombre ) => {
+    let resultado;
+    switch ( nombre){
+        case "Lua":
+            resultado = "Es de Abril";
+            break;
+        default:
+            resultado ="No se sabe de quién es";
+        
+    }
+    return resultado;
+}
+console.log( evaluarNombre("Lua") ); // Es de Abril
 
-
-
+const evaluarNombre2 = ( nombre ) => {
+    let resultado;
+    switch ( nombre){
+        case "Lua":
+            resultado = "Es de Abril";
+            break;
+        case "Borrego": 
+        case "Besito":
+        case "Fijól":
+        case "Paco":
+            resultado = "Es de Yessica";
+            break;
+        case "Milo":
+            resultado = "Es de Carlos";
+            break
+        case "Cuchara":
+            resultado = "Es de Ricardo";
+            break;
+        default:
+            resultado ="No se sabe de quién es";        
+    }
+    return resultado;
+}
+console.log( evaluarNombre2("Lua") ); // Es de Abril
+console.log( evaluarNombre2("Milo") ); // Es de Carlos
+console.log( evaluarNombre2("Borrego") ); // Es de Jessica
 
 /**
  * Función que reciba la velocidad de un ventilador y devuelva el mensaje
@@ -88,8 +189,87 @@
  * @returns {string} mensaje
  */
 
+const estadoVentilador = ( velocidad ) => {
+    let mensaje;
+    switch ( velocidad ){
+        case "Velocidad 0":
+            mensaje = "Apagado";
+            break;
+        case "Velocidad 1":
+            mensaje = "Baja";
+            break;
+        case "Velocidad 2":
+            mensaje = "Media";
+            break;
+        case "Velocidad 3":
+            mensaje = "Alta";
+            break;
+        default:
+            mensaje = "Velocidad desconocida";
+            break;
+    }  
+    return mensaje;  
+}
+
+console.log(estadoVentilador("Velocidad 0"));
 
 
+const estadoVentilador2 = ( velocidad ) => {
+    if( velocidad === "Velocidad 0" ) return "Apagado";
+    else if( velocidad === "Velocidad 1" ) return "Baja";
+    else if( velocidad === "Velocidad 2" ) return "Media";
+    else if( velocidad === "Velocidad 3" ) return "Alta";
+    else return "Velocidad desconocida";
+}
+
+
+console.log(estadoVentilador2("Velocidad 1"));
+
+
+
+const estadoVentilador3 = ( velocidad ) => {
+    let mensaje;
+    switch ( velocidad ){
+        case 0:
+        case "0":
+        case "Velocidad 0":
+            mensaje = "Apagado";
+            break;
+        case 1:
+        case "1":
+        case "Velocidad 1":
+            mensaje = "Baja";
+            break;
+        case 2:
+        case "2":
+        case "Velocidad 2":
+            mensaje = "Media";
+            break;
+        case 3:
+        case "3":
+        case "Velocidad 3":
+            mensaje = "Alta";
+            break;
+        default:
+            mensaje = "Velocidad desconocida";
+            break;
+    }  
+    return mensaje;  
+}
+
+console.log(estadoVentilador3("3"));
+
+
+const estadoVentilador4 = ( velocidad ) => {
+    if( velocidad === "Velocidad 0"  || velocidad == 0) return "Apagado";
+    else if( velocidad === "Velocidad 1" || velocidad == 1) return "Baja";
+    else if( velocidad === "Velocidad 2" || velocidad == 2) return "Media";
+    else if( velocidad === "Velocidad 3" || velocidad == 3) return "Alta";
+    else return "Velocidad desconocida";
+}
+
+
+console.log(estadoVentilador4("2"));
 
 // ------------------------ Operador ternario --------------------------
 /*
@@ -113,7 +293,8 @@
  */
 
 
-
+const esMayorDeEdad2 = (edad) => edad >= 18 ?  "Eres mayor de edad" : "Eres menor de edad"; 
+    
 
 // ------------------- Ejercicio Estaciones del año --------------------------
 /*
