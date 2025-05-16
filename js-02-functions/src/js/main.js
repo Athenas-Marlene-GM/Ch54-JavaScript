@@ -333,7 +333,6 @@ console.log(`Resultado final: ${ factorialConRecursividad(5)}`); // 120
 */
 
 function saludoRecursivo( numSaludos ){
-
   if( numSaludos < 1) return 0;
   console.log("Saludo " + numSaludos );
   saludoRecursivo( numSaludos - 1);
