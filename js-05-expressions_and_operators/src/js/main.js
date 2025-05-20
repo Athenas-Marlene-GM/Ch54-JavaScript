@@ -303,4 +303,8 @@ console.log( "Hola " + usuario ); // Invitado
   En caso contrario imprimir "Acceso concedido".
 */
 let autorizado = true;
+console.log( autorizado && "Acceso concedido" || "Acceso denegado");
+console.log( esAutorizado ? "Acceso Concedido" : "Acceso Denegado" );
+
+
 
