@@ -41,6 +41,28 @@ const changeElementById = () =>{
 
 changeElementById();
 
+/*
+ Modificar el parragraph de la línea 44 a 49 del html
+ Mostrar una tarjeta de bootstrao con el titulo "<Mi nombre>"
+ - Crear una nueva función que inserte la tarjeta.
+ - Invotar la función para que se ejecute.
+*/
+
+const cambiaElemntos = ( name ) => {
+    const descripcionOperadores = document.getElementById("tarjeta");
+    console.log(descripcionOperadores);
+    descripcionOperadores.innerHTML = 
+        `<div class="card" style="width: 18rem;">
+        <img src = "./public/images/dino.jpg" class="card-img-top" alt="Dinosaurio rex escribiendo código" >
+            <div class="card-body">
+                <h5 class="card-title">${name}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+</div > `;
+}
+cambiaElemntos("Athenas");
+
 /**
  * Modificar elementos por su tag(etiqueta HTML)
  */
@@ -55,6 +77,14 @@ const changeElementsByTagName =  () => {
 }
 
 // changeElementsByTagName();
+
+/* rEALIZAR UNA FUNCIÓN QUE LEA TODOS LO BOTONES DE LA PÁGINA */
+
+const readButtons = () =>{
+    listButtons = document.getElementsByTagName("button");
+    console.log("El número total de botónes en esta página es de: " + listButtons.length);
+}
+readButtons();
 
 /**
  * Acceder a un elemento usando el selector universar
