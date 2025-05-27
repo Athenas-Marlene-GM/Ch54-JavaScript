@@ -1,5 +1,5 @@
 
-const insertMainFooter = ( footer )=>{
+export const insertMainFooter = ( footer )=>{
 
     footer.innerHTML = `
         <div class="container text-center">

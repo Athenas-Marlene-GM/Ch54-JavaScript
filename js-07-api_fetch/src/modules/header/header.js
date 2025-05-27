@@ -1,6 +1,6 @@
 
 
-const insertMainHeader = ( header )=>{
+export const insertMainHeader = ( header )=>{
     
      header.innerHTML = `
         <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">

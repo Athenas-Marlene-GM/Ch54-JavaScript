@@ -78,8 +78,11 @@ Características clave de los módulos JS:
 
 
 // importa las funciones del footer y header e invócalos para que se ejecuten
+import{ insertMainHeader } from "../modules/header/header.js";
+insertMainHeader(document.getElementById("header"));
 
-
+import{ insertMainFooter } from "../modules/footer/footer.js";
+insertMainFooter(document.getElementById("footer"));
 
 /*
   Uso del local Storage.
@@ -99,6 +102,41 @@ Características clave de los módulos JS:
     localStorage.clear() → Borra todo el almacenamiento.
 
 */
+
+/*
+ Crear en el HTML un input y un botón para guardar el valor en el localStorage.
+  
+  Al cargar la página, si hay un valor guardado, mostrarlo en el titulo H1 "Hola, {nombre}".
+  En caso contrario, mostrar "Hola, persona invitada".
+*/
+
+const welcomeText = () =>{
+  const name = localStorage.getItem("name");
+  let result;
+  name ?  result = name : result = "invitado";
+  document.getElementById("welcome-text").textContent = "Hola " + result;
+}
+welcomeText();
+
+const saveNameInLocalStore = () => {
+  const name = document.getElementById('name-text').value;
+  localStorage.setItem("name",name);
+  welcomeText();
+}
+
+
+//No hacer
+//window.aLlamadaBotonGuardar = saveNameInLocalStore;
+
+document.getElementById('mi-boton').addEventListener('click', saveNameInLocalStore);
+
+const refNameInput = document.getElementById("mi-boton");
+refNameInput.addEventListener( "keydown" , ( event )=>{
+  console.log(event.key);
+});
+
+
+
 
 
 
@@ -121,6 +159,7 @@ const segundoPaso = () => {
   for (let i = 0; i < 1_000_000_000; i++) {
     i * 2;
   }
+  console.log("02 - Desarrollo de mi programa fin")
 };
 
 const tercerPaso = () => {
@@ -155,4 +194,11 @@ tercerPaso();
 
 
 
+const saludarTranscurridosXSeg = (milisegundos) =>{
+  const saludar = (nombre) => alert(`Hola ${nombre}`)
+  setTimeout(saludar, milisegundos,"Neo");
+}
 
+console.log("Antes de saludar");
+saludarTranscurridosXSeg( 5000 );
+console.log("Despues de saludar");
