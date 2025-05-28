@@ -1,3 +1,9 @@
+import { printOutString } from "./modules/ex1.js";
+import { doubleArrayValues } from "./modules/ex2.js";
+import { sumAndProductOfArray } from "./modules/ex3.js";
+import { getCommonCourses } from "./modules/ex4.js";
+import { arraySteps } from "./modules/ex5.js";
+import { bubbleSort } from "./modules/ex6.js";
 /* 
     Exercise #1 ( sugerencia join() )
     Copy the code below into your workspace:
@@ -11,9 +17,7 @@
 
 
 let arr = ["This", "is", "a", "sentence."];
-function printOutString(arr) {
-    arr.join(" ");
-}
+console.log("Ejercicio 1:");
 printOutString(arr);
 
 /* 
@@ -25,12 +29,9 @@ printOutString(arr);
     Example: Given an array [1, 2, 4, 5]. The output should be [2, 4, 8, 10] 
 */
 
-let myArray = [1, 2, 4, 5]
-let doubleArrayValues = (arr) =>{
-    return arr.map((num) => num*2);
-}
-
-console.log(doubleArrayValues(myArray))
+let myArray = [1, 2, 4, 5];
+console.log("Ejercicio 2:");
+console.log(doubleArrayValues(myArray));
 
 
 /* Exercise #3 (sugerencia reduce() )
@@ -38,12 +39,7 @@ Write a program to compute the sum and product (multiplication) of an array of n
 Example: Given an array [1, 2, 3, 4] The sum is 10. The product is 24. */
 
 let myArray2 = [1, 2, 3, 4];
-
-let sumAndProductOfArray = (myArray2) => {
-    let arraySum = myArray2.reduce((sum, num) => sum + num);
-    let arrayProduct = myArray2.reduce((product = 1,num) => product * num);
-    console.log(arrayProduct, arraySum);
-}
+console.log("Ejercicio 3:");
 sumAndProductOfArray(myArray2);
 
 /* Exercise #4 (sugerencia filter() e includes() )
@@ -54,11 +50,7 @@ Create a program that loops over the 2 arrays; if there are any common courses p
 let student1Courses = ['Math', 'English', 'Programming'];
 let student2Courses = ['Geography', 'Spanish', 'Programming'];
 
-const getCommonCourses = (courses1, courses2) => {
-    return courses1.filter((course) => 
-        courses2.includes(course));
-}
-
+console.log("Ejercicio 4:");
 console.log(getCommonCourses(student1Courses,student2Courses));
 
 /* Exercise #5
@@ -73,23 +65,8 @@ let people = ["Maria", "Dani", "Luis", "Juan", "Camila"];
 7.	Write the command that gives the indexOf where "Maria" is located.
 At the end of the exercise, there should be 4 people in the array. */
 
-let people = ["Maria", "Dani", "Luis", "Juan", "Camila"];
-
-console.log(people);
-people.splice(people.indexOf("Dani"),1);
-console.log(people);
-people.splice(people.indexOf("Juan"),1);
-console.log(people);
-people.unshift(people.splice(people.indexOf("Luis"),1)[0]);
-console.log(people);
-people.push("Athenas");
-console.log(people);
-for(const person of people){
-    console.log(person);
-    if(person === "Maria") break;
-}
-console.log(`El índice de Maria es ${people.indexOf("Maria")}`);
-
+console.log("Ejercicio 5:");
+arraySteps();
 
 /* Exercise # 6
 Realizar una función que realice el algoritmo de burbuja.
@@ -97,26 +74,7 @@ Entrada [3, 6, 12, 5, 100, 1 ]
 Salida [1, 3, 5, 6, 12, 100] */
 
 let arr3 = [3, 6, 12, 5, 100, 1 ];
-const bubbleSort = ( arr ) => {
 
-    for(let i = 1; i < arr.length; i++ ){
-        for( let j = 0; j < arr.length - i; j++ ){
-            if( arr[j] > arr[j + 1] ){
-                arr.splice(j,2, arr[j + 1], arr[j]);
-            }
-        }  
-    }
-    return arr;
-    
-}
-
+console.log("Ejercicio 6:");
 console.log(bubbleSort(arr3));
 
-
-
-const commonCourses = (student1Courses, student2Courses) => {
-    return student1Courses.filter((element) => 
-     student2Courses.includes(element));
-}
-
-console.log(commonCourses(student1Courses,student2Courses));
